@@ -1,0 +1,25 @@
+public class a{
+    public static void main(String[] args){
+        Manager m1 = new Manager();
+        m1.salary = 50000;
+        m1.bonus = 20000;
+        System.out.println(m1.calculateSalary());
+        
+        Employee e1 = new Employee();
+        e1.salary = 50000;
+        System.out.println(e1.calculateSalary());
+    }
+}
+class Employee{
+    String name;
+    int salary;
+    int calculateSalary(){
+        return salary;
+    }
+}
+class Manager extends Employee{
+    int bonus;
+    int calculateSalary(){
+        return salary+bonus;
+    }
+}

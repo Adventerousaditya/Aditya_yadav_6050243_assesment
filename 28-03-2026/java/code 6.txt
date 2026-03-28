@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class ShoppingCart{
+    public static void main(String[] args){
+        Scanner sc  = new Scanner(System.in);
+        int a = sc.nextInt();
+        Map<Integer , BankAccount> m1 = new HashMap<>();
+        for(int i = 0 ; i<a ; i++){
+            BankAccount b1 = new BankAccount();
+            m1.put(i , b1);
+        }
+        m1.get(1).accountBalance = 500;
+        m1.get(2).accountBalance = 100;
+        System.out.println("Debitor balance = "+m1.get(1).accountBalance + " Creditor balance = " + m1.get(2).accountBalance);
+        BankAccount.MakePayment(m1.get(1) , m1.get(2) , 100);
+        System.out.println("Debitor balance = "+m1.get(1).accountBalance + " Creditor balance = " + m1.get(2).accountBalance);
+    }
+}
+class BankAccount {
+    int name;
+    int accountBalance;
+    static void MakePayment(BankAccount debitor , BankAccount creditor , int amount){
+    if(debitor.accountBalance<amount){
+        System.out.println("Insufficient funds");
+        return;
+    }
+    debitor.accountBalance-=amount;
+    creditor.accountBalance+=amount;
+    System.out.println("paid successfully");
+}
+}

@@ -1,0 +1,37 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class BankAccount{
+    private String accountHolderName;
+    private int acccountNumber;
+    private int balance;
+    void deposit(int amount){
+        if(amount<=0){
+            System.out.print("Amount cannot be negative");
+            return;
+        }
+        this.balance += amount;
+    }
+    void withdraw(int amount){
+        if(amount<=0){
+            System.out.print("Amount cannot be negative");
+            return;
+        }
+        if(amount>this.balance){
+            System.out.print("insufficient account balance");
+            return;
+        }
+        this.balance -= amount;
+    }
+    int getBalance(){
+        return this.balance;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        BankAccount a = new BankAccount();
+        a.deposit(500);
+        a.withdraw(100);
+        System.out.print(a.getBalance());
+    }
+}

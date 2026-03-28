@@ -1,0 +1,25 @@
+public class ShoppingCart{
+    public static void main(String[] args){
+        
+    }
+}
+interface Payment{
+    void makePayment(double amount);
+}
+class creditCardPayment implements Payment{
+    int cardBalance;
+    void makePayment(double amount){
+        cardBalance-=amount;
+    }
+}
+class UpiPayment implements Payment{
+    int UpiBalance;
+    void makePayment(double amount){
+        UpiBalance-=amount;
+    }
+}
+class CashPayment implements Payment{
+    void makePayment(double amount){
+        System.out.prinln("Cash payment Successfull "+amount);
+    }
+}

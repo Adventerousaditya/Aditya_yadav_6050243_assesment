@@ -1,0 +1,45 @@
+public class a{
+    public static void main(String[] args){
+        Circle s1 = new Circle(10);
+        System.out.println(s1.calculateArea());
+        
+        Square s2 = new Square(5);
+        System.out.println(s2.calculateArea());
+        
+        Triangle s3 = new Triangle(5 , 5);
+        System.out.println(s3.calculateArea());
+    }
+}
+abstract class Shape{
+    abstract double calculateArea();
+}
+class Circle extends Shape{
+    int radius;
+    Circle(int radius){
+        this.radius = radius;
+    }
+    double calculateArea(){
+        return 2*22*this.radius/7;
+    }
+}
+class Square extends Shape{
+    int side;
+    Square(int side){
+        this.side = side;
+    }
+    double calculateArea(){
+        return 4*side;
+    }
+}
+
+class Triangle extends Shape{
+    int base;
+    int height;
+    Triangle(int base , int height){
+        this.base = base;
+        this.height = height;
+    }
+    double calculateArea(){
+        return 0.5* base *height;
+    }
+}
